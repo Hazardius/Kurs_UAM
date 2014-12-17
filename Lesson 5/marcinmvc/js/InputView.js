@@ -1,4 +1,5 @@
 UAM.InputView = function (inputView) {
+    "use strict";
 
     UAM.EventEmitter.call(this);
 
@@ -8,14 +9,14 @@ UAM.InputView = function (inputView) {
     this.add = function () {
         var content = this.inputElement.value;
         if (content) {
-            var liElement = document.createElement("li");
-            liElement.textContent = content;
+            var newElement = document.createElement("li");
+            newElement.textContent = content;
             this.inputElement.value = "";
-            this.emit("addElement", liElement);
+            this.emit("addElement", newElement);
         }
-    };
+    }.bind(this);
 
-    this.buttonAdd.addEventListener("click", this.add.bind(this));
+    this.buttonAdd.addEventListener("click", this.add);
 
 };
 

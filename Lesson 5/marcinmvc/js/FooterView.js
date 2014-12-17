@@ -1,4 +1,5 @@
 UAM.FooterView = function (footerView) {
+    "use strict";
 
     UAM.EventEmitter.call(this);
     this.allElements = 0;
@@ -6,9 +7,8 @@ UAM.FooterView = function (footerView) {
 
     this.updateFooterView = function () {
         footerView.textContent = this.selectedItems + '/' + this.allElements;
-    }
-    
-    this.updateFooterView.bind(this);
+    }.bind(this);
+
     this.updateFooterView();
     
     this.updateAllItems = function (data) {
@@ -19,8 +19,7 @@ UAM.FooterView = function (footerView) {
     this.updateSelectedItems = function (selectedItems) {
         this.selectedItems = selectedItems;
         this.updateFooterView();
-    }
-
+    };
 };
 
 UAM.utils.inherits(UAM.EventEmitter, UAM.FooterView);
