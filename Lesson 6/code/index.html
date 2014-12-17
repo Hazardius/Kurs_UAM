@@ -1,22 +1,35 @@
 <html>
+	<head>
+		<title>MVC</title>
+		<script type="text/javascript" src="js/ee.js"></script>
+		<script type="text/javascript" src="js/utils.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+		<script type="text/javascript" src="js/Model.js"></script>
+		<script type="text/javascript" src="js/InputControler.js"></script>
+		<script type="text/javascript" src="js/InputView.js"></script>
+		<script type="text/javascript" src="js/ListControler.js"></script>
+		<script type="text/javascript" src="js/ListView.js"></script>
+		<script type="text/javascript" src="js/FooterControler.js"></script>
+		<script type="text/javascript" src="js/FooterView.js"></script>
+		<script type="text/javascript" src="js/SaveControler.js"></script>
+		<script type="text/javascript" src="js/SaveView.js"></script>
+		<link rel="stylesheet" href="css/styles.css">
+	</head>
 
-<head></head>
-
-<body>
-
-	<script type="text/javascript">
-		var httpRequest = new XMLHttpRequest();
-		httpRequest.onreadystatechange = function () {
-			if (httpRequest.readyState !== 4 ) {
-				return;
-			}
-			if (httpRequest.status !== 200) {
-				throw new Error('Request failed');
-			}
-			console.log(httpRequest.responseText);
-		};
-	httpRequest.open('POST', '/api/todos');
-	httpRequest.send(JSON.stringify([{id: 0, value: 'test'}, {id: 1, value: 'test222'}]));
-	</script>
-</body>
+	<body>
+		<div class="main">
+			<div id="inputview">
+				<input id="inputValue" type="text" class="add_el"></input>
+				<button id="btn" class="add_btn">Dodaj</button>
+			</div>
+			<div class="list_container">
+				<ul id="listview">
+				</ul>
+			</div>
+		    <div id="footerview"></div>
+		    <div id="saveview">
+				<button id="sbtn" class="add_btn">Zapisz</button>
+            </div>
+		</div>
+	</body>
 </html>
