@@ -40,7 +40,8 @@ UAM.Model = function () {
             }
 
             if (httpRequest.status !== 200) {
-                throw new Error('Request failed');
+                window.alert("Not a 200!");
+                return;
             }
         };
         httpRequest.open('POST', '/api/todos');
